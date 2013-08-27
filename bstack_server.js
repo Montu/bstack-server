@@ -1,4 +1,5 @@
 /* Usage: 
+ * First call npm install to install dependencies
  * To start first install node.js on your computer and then run in shell : node bstact_server.js
  * In browser type: http://127.0.0.1:8080/firefox/start to start firefox and /firefox/close to close it
  * and completely delete the data. For chrome replace firefox with chrome. There seems to be some problem with rm -rf 
@@ -10,6 +11,7 @@ my_http = require("http"),
 path = require("path"),
 url = require('url'),
 filesys = require("fs"),
+fsex = require("fs-extra"),
 exec = require('child_process').exec,
 browser_location = "",
 browser_name = "",
@@ -29,11 +31,11 @@ my_http.createServer(function(request, response) {
 		case "chrome":
 			browser_name = "Google Chrome";
 			browser_location = "/Applications/Google\ Chrome.app/"
-			browser_data_location = "/Users/akshay/Library/Application Support/Google/Chrome"
+			browser_data_location = "/Users/akshay/Library/Application\ Support/Google/Chrome"
 			break;
 		default:
 			response.writeHeader(404, {"Content-Type": "text/plain"});
-			response.write("No such browserß");
+			response.write("No such browsers");
 			response.end();
 	}
 
@@ -46,7 +48,14 @@ my_http.createServer(function(request, response) {
 			break;
 		case "close":
 			exec ("pkill "+browser_name);
-			exec ("rm -rf " + browser_data_location);
+			fsex.remove(browser_data_location, function(err) {
+				if (err) {
+					console.log(err);
+				}
+				else {
+					console.log("success!");
+				}
+			});
 			response.writeHeader(200, {"Content-Type": "text/plain"});
 			response.write(browser_name + " Closed and Browswer data deleted!");
 			response.end();
