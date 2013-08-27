@@ -24,7 +24,7 @@ browser_data_location = "";
 my_http.createServer(function(request, response) {
 	var var_path = url.parse(request.url).pathname;
 	sys.puts(var_path)
-	split_path = var_path.split('/')
+	var split_path = var_path.split('/')
 
 	switch (split_path[1]) {
 		case "firefox":
