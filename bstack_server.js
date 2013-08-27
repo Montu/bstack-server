@@ -2,8 +2,12 @@
  * First call npm install to install dependencies
  * To start first install node.js on your computer and then run in shell : node bstact_server.js
  * In browser type: http://127.0.0.1:8080/firefox/start to start firefox and /firefox/close to close it
- * and completely delete the data. For chrome replace firefox with chrome. There seems to be some problem with rm -rf 
- * command will correct it by tomorrow
+ * and completely delete the data. Support for Safari Added.
+ * ** This could be more cleaned up by making a routes like config file which at
+ * start of application is loaded on a mapping hash
+ * **** Thoroughly tested for Firefox. Stop command partially tested for Chrome and Safari
+ * Stop by default clears the entier browser data and makes it a fresh browser ready to run 
+ * next time. 
  */
 
 var sys = require("sys"),
@@ -33,6 +37,10 @@ my_http.createServer(function(request, response) {
 			browser_location = "/Applications/Google\ Chrome.app/"
 			browser_data_location = "/Users/akshay/Library/Application\ Support/Google/Chrome"
 			break;
+		case "safari":
+			browser_name = "Safari";
+			browser_location = "/Applications/Safari.app/";
+			browser_data_location = "/Users/akshay/Library/Safari/"
 		default:
 			response.writeHeader(404, {"Content-Type": "text/plain"});
 			response.write("No such browsers");
