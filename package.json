@@ -4,7 +4,8 @@
 		{
 			"fs-extra" : "0.6.3",
 			"express" : "",
-			"http-proxy" : ""
+			"http-proxy" : "",
+			"plist" : ""
 		}
 , "repository" :
 	{
@@ -12,3 +13,5 @@
 		,"url" : "http://github.com/montu/bstack-server.git"
 	}
 }
+
+

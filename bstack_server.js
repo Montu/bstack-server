@@ -17,14 +17,24 @@ url = require('url'),
 filesys = require("fs"),
 fsex = require("fs-extra"),
 exec = require('child_process').exec,
+plist = require('plist'),
+proxy_settings = require('./lib/proxy_settings.js'),
 browser_location = "",
 browser_name = "",
-browser_data_location = "";
+browser_data_location = "",
+_preference_location = __dirname+'/preferences.plist',
+_temp_new_pref = __dirname+'/preferences_new.plist' // Made so that my own file doesn't get corrupted while testing!
+
+
+// console.log("Directory name " + (__dirname || "Not Found"))
 
 my_http.createServer(function(request, response) {
-	var var_path = url.parse(request.url).pathname;
-	sys.puts(var_path)
+	var var_path = url.parse(request.url).pathname
+	var query = url.parse(request.url,true).query
+	console.log(query.proxy + " " + query.address + " " + query.port + "printed\n")
+	// sys.puts(var_path)
 	var split_path = var_path.split('/')
+
 
 	switch (split_path[1]) {
 		case "firefox":
@@ -74,5 +84,8 @@ my_http.createServer(function(request, response) {
 			response.end();
 
 	}
+
+	if (query.proxy == 'true')
+		proxy_settings.modify_proxy_general_settings(query.server, parseInt(query.port),_preference_location,_temp_new_pref)
 }).listen(8080);
 sys.puts("Server Running on 8080");
