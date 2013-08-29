@@ -3,24 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.bstack.bstack_proxy</string>
-	<key>Program</key>
-	<string>/usr/local/bin/bstack/bstack_proxy.js</string>
-	<key>KeepAlive</key>
-	<true/>
-	<key>Sockets</key>
-	<dict>
-		<key>Listeners</key>
-		<dict>
-			<key>SockServiceName</key>
-			<string>bootps</string>
-			<key>SockType</key>
-			<string>stream</string>
-			<key>SockFamily</key>
-			<string>IPv4</string>
-			<key>SockServiceName</key>
-			<string>9000</string>
-		</dict>
-	</dict>
+		<string>com.bstack.bstack_proxy</string>
+	<key>ProgramArgumnets</key>
+		<array>
+			<string>/Users/akshay/Documents/Workspace/bstack-server/bstack</string>
+			<string>start</string>
+		</array>
+		<key>KeepAlive</key>
+		<true/>
 </dict>
 </plist>

@@ -1,0 +1,5 @@
+#/bin/bash
+
+nohup /usr/local/bin/node bstack_server.js &
+
+

@@ -1,7 +1,7 @@
 /* Usage: 
  * First call npm install to install dependencies
  * To start first install node.js on your computer and then run in shell : node bstact_server.js
- * In browser type: http://127.0.0.1:8080/firefox/start to start firefox and /firefox/close to close it
+ * In browser type: http://127.0.0.1:8081/firefox/start to start firefox and /firefox/close to close it
  * and completely delete the data. Support for Safari Added.
  * ** This could be more cleaned up by making a routes like config file which at
  * start of application is loaded on a mapping hash
@@ -51,6 +51,7 @@ my_http.createServer(function(request, response) {
 			browser_name = "Safari";
 			browser_location = "/Applications/Safari.app/";
 			browser_data_location = "/Users/akshay/Library/Safari/"
+			break;
 		default:
 			response.writeHeader(404, {"Content-Type": "text/plain"});
 			response.write("No such browsers");
@@ -87,5 +88,5 @@ my_http.createServer(function(request, response) {
 
 	if (query.proxy == 'true')
 		proxy_settings.modify_proxy_general_settings(query.server, parseInt(query.port),_preference_location,_temp_new_pref)
-}).listen(8080);
-sys.puts("Server Running on 8080");
+}).listen(8081);
+sys.puts("Server Running on 8081");

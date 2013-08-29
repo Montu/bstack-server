@@ -2,25 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Label</key>
-	<string>com.bstack.bstack_server</string>
-	<key>Program</key>
-	<string>/usr/local/bin/bstack/bstack_server.js</string>
-	<key>KeepAlive</key>
-	<true/>
-	<key>Sockets</key>
-	<dict>
-		<key>Listeners</key>
-		<dict>
-			<key>SockServiceName</key>
-			<string>bootps</string>
-			<key>SockType</key>
-			<string>stream</string>
-			<key>SockFamily</key>
-			<string>IPv4</string>
-			<key>SockServiceName</key>
-			<string>8080</string>
-		</dict>
-	</dict>
+        <key>Label</key>
+        <string>com.bstack.bstack-server</string>
+        <key>ProgramArguments</key>
+        <array>
+                <string>/usr/local/bin/node</string>
+                <string>/Users/akshay/Documents/Workspace/bstack-server/bstack_server.js</string>
+        </array>
+        <key>KeepAlive</key>
+        <true/>
 </dict>
 </plist>
