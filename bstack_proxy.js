@@ -26,7 +26,7 @@ http.createServer(function (req, res) {
 
 		callback = function(response) {
 			response.on('data', function(return_data){
-				res.writeHead(200, {'Conetent-Type': 'text/plain'});
+				res.writeHead(200, {'Content-Type': 'text/plain'});
 				res.write('request successfully proxied!' + '\n' + JSON.stringify(req.headers, true, 2));
 				res.write('Your command was successfully implemented on bstack server');
 				res.end();

@@ -1,0 +1,17 @@
+{
+	"b1.bstack.com" : 
+		{
+			"ip" : "localhost",
+			"port" : "8081"
+		},
+	"b2.bstack.com" :
+		{
+			"ip" : "localhost",
+			"port" : "8082"
+		},
+	"b3.stack.com" :
+		{
+			"ip" : "localhost",
+			"port" : "8083"
+		}
+}
