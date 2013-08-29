@@ -3,13 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-		<string>com.bstack.bstack_proxy</string>
+		<string>com.bstack.bstack-proxy</string>
 	<key>ProgramArgumnets</key>
 		<array>
-			<string>/Users/akshay/Documents/Workspace/bstack-server/bstack</string>
-			<string>start</string>
+			<string>usr/local/bin/node</string>
+			<string>Users/akshay/Documents/Workspace/bstack-server/bstack_server_tuneller.js</string>
 		</array>
 		<key>KeepAlive</key>
 		<true/>
 </dict>
 </plist>
+

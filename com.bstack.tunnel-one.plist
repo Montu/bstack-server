@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Label</key>
+		<string>com.bstack.tunnel-one</string>
+		<key>ProgramArguments</key>
+		<array>
+			<string>ssh</string>
+			<string>-N</string>
+			<string>-p</string>
+			<string>22</string>
+			<string>akshay@127.0.0.1</string>
+			<string>-L</string>
+			<string>8082:127.0.0.1:8081</string>
+		</array>
+		<key>KeepAlive</key>
+		<value>true</value>
+	</dict>
+</plist>
+
+<!-- ssh -N -p 22 akshay@127.0.0.1 -L 8082:127.0.0.1:8081 -->
