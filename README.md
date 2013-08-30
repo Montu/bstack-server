@@ -3,6 +3,11 @@ bstack-server
 
 Node.js based browser stack server
 
+0. Dependencies: run npm install in project root folder to install required dependencies
+1. To start the server manually execute bstack script in the project root folder.
+2. To make these servers run as daemon copy files in folder LaunchAgents to ~/Library/LaunchAgents or /Library/LaunchAgents and copy files in folder LaunchDaemons to /Library/LaunchDaemons.
+
+
 Steps to use:
 1. Install all the dependencies buy running npm install in root folder of project.
 2. To start server call node bstack_server.js
