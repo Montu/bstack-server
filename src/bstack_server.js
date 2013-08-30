@@ -18,12 +18,13 @@ filesys = require("fs"),
 fsex = require("fs-extra"),
 exec = require('child_process').exec,
 plist = require('plist'),
-proxy_settings = require('./lib/proxy_settings.js'),
+global = require('../global.js'),
+proxy_settings = require(global.project_root + '/lib/proxy_settings.js'),
 browser_location = "",
 browser_name = "",
 browser_data_location = "",
-_preference_location = __dirname+'/preferences.plist',
-_temp_new_pref = __dirname+'/preferences_new.plist' // Made so that my own file doesn't get corrupted while testing!
+_preference_location = global.project_root +'/resources/preferences.plist',
+_temp_new_pref = global.project_path+'/resources/preferences_new.plist' // Made so that my own file doesn't get corrupted while testing!
 
 
 // console.log("Directory name " + (__dirname || "Not Found"))

@@ -2,13 +2,15 @@ var http = require('http'),
 	httpProxy = require('http-proxy'),
 	url = require('url'),
 	sys = require('sys'),
-	fs = require('fs')
+	fs = require('fs'),
+	global = require('../global.js')
 
-HOST_IP_OR_URL = '127.0.0.1';
-HOST_PORT = 9000; //Will be based on mapping
+HOST_IP_OR_URL = '127.0.0.1'; 
+HOST_PORT = 9000; 
 
 // Server definition
-var mapping = JSON.parse(fs.readFileSync('./proxy_mapping.json'))
+var mapping = JSON.parse(fs.readFileSync(global.project_root+'/config/proxy_mapping.json'))
+console.log("Starting Proxy server on: " + HOST_IP_OR_URL + ":" + HOST_PORT)
 
 http.createServer(function(req, res){
 	url_object = url.parse(req.url, true)
@@ -41,7 +43,5 @@ http.createServer(function(req, res){
 	}
 
 	http.request(options, callback).end()
-}).listen(9000)
+}).listen(HOST_PORT)
 
-// var proxyServer = httpProxy.createServer(options)
-// proxyServer.listen(9000)
