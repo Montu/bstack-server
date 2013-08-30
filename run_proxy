@@ -1,9 +1,6 @@
 #/bin/bash
-id_rsa = "/location/to/your/key';
-
-nohup /usr/loca/bin/node ./src/bstack_server.js &
-nohup /usr/local/bin/node ./src/bstack_proxy_tuneller &
-nohup ssh -N -p 22 -i $id_rsa akshay@127.0.0.1 -L 8082:127:0.0.1:8081 &
-nohup ssh -N -p 22 -i $id_rsa akshay@127.0.0.1 -L 8083:127.0.0.1:8081 &
-
-
+BSTACK_ROOT=/Users/akshay/Documents/Workspace/bstack-server
+nohup /usr/local/bin/node $BSTACK_ROOT/src/bstack_server.js &
+nohup /usr/local/bin/node $BSTACK_ROOT/src/bstack_proxy_tuneller &
+nohup ssh -N -p 22 akshay@127.0.0.1 -L 8082:127:0.0.1:8081 &
+nohup ssh -N -p 22 akshay@127.0.0.1 -L 8083:127.0.0.1:8081 &

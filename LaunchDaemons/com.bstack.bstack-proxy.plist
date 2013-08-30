@@ -7,7 +7,7 @@
 	<key>ProgramArgumnets</key>
 		<array>
 			<string>usr/local/bin/node</string>
-			<string>Users/akshay/Documents/Workspace/bstack-server/bstack_server_tuneller.js</string>
+			<string>Users/akshay/Documents/Workspace/bstack-server/src/bstack_server_tuneller.js</string>
 		</array>
 		<key>KeepAlive</key>
 		<true/>
